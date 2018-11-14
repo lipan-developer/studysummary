@@ -1,0 +1,12 @@
+在学习完分支管理后，现在来学习与远程仓库相应的一系列操作：
+①  git push origin master ：将本地库master分支上的内容提交到远程仓库origin上
+②  git remote -v ：查看远程仓库的消息
+③  git pull ：从关联的远程仓库中拉取（如果没有关联远程仓库的分支，可以使用git branch --set -upstream-to = origin/dev dev）
+④  git rebase  ：将日志消息整理成一条直线，但本地分支提交信息已被修改
+⑤  git remote rm origin: 删除已关联的远程仓库分支
+⑥  git tag v1.0 打标签，也可以使用commitid来进行对之前的某个分支进行打标签（本地库）如：git -a v1.0 -m "标签信息" 1094rf
+⑦  git show 查看所有的标签信息
+⑧  git tag -d v1.0 删除标签
+⑨  git push origin v1.0 ：将当前1.0版本推送到远程仓库
+   git push origin --tags ：一次性推送全部尚未推送到远程的本地标签
+⑩  git check -ignore ： 检查.gitignore配置文件

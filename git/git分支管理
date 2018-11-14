@@ -1,0 +1,11 @@
+在学习本地库的一些基本操作后，现在来学习一下分支管理相关操作
+①  git checkout -b dev ：创建一个dev分支，并进行切换
+			 相当于git branch dev 创建dev分支，并执行git checkout dev，表并进行切换到dev分支
+②  git branch ：查看当前分支，如果是当前分支是带有星号的
+③  git merge dev：表示合并dev分支的内容
+		  --no-ff 表示不使用快速方式，这种方式可以方便后续查看是谁提交的分支，可加-m来写合并信息
+④  git branch -d dev ： 表示删除dev分支
+⑤  git stash ：隐藏工作现场（主要用于当前分支有一部分没有完成不能提交，但是我们有需要在当前分支上开辟一个新的分支，可以先将当前的未完成的代码隐藏起来）
+⑥  git stash list ：查看所有的被隐藏的工作现场
+⑦  git stash pop ：表示从隐藏空间拿出我们想要的，同时删除隐藏空间的内容
+		   该指令等价于：先执行git stash apply从隐藏空间恢复，在执行git stash drop从隐藏空间移除

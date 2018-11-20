@@ -1,0 +1,19 @@
+nodeJs是一个基于V8的JavaScript运行环境
+安装nodeJs
+1、下载对应的资源包
+	wget https://nodejs.org/dist/v9.9.0/node-v9.9.0-linux-x64.tar.gz
+2、解压并配置环境变量
+	tar -zxvf node-v9.9.0-linux-x64.tar.gz
+	mv node-v9.9.0-linux-x64.tar.gz nodeJs
+	vi /etc/profile
+	export PATH=$PATH:/home/lipan/apps/nodeJs/bin
+	source /etc/profile
+3、测试
+	node -v 查看版本
+	node 进入node编辑模式，ctrl+c退出，windows需两次ctrl+c进行退出
+安装npm
+npm是nodeJs的包管理工具
+npm在安装nodejs的时候就已经顺带安装好了
+测试
+	npm -v 查看npm版本
+

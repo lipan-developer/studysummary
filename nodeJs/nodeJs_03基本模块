@@ -1,0 +1,42 @@
+1、fs模块（用于文件的读写）
+	文件读写有两种方式，同步读写和异步读写
+	①、异步读
+		与同步不同的是会传入一个回调函数
+		var fs = require('fs')
+		fs.readfile("./hello.js","utf-8",function(err,data){
+			if(err){
+				console.info(err)
+			}else{
+				consloe.info(data)
+			}
+		})
+	②、同步读，与异步想必函数名称添加了Sync，同步返回结果需要等待，好处是逻辑简单
+		var fs = require("fs");
+		var buffer = fs.readFileSync("./hello.js");
+		console.info(buffer.toString("utf-8"))
+	③、异步写
+		var fs = require("fs")
+		fs.writeFile("./hello.txt","hello nodeJs",function(err){
+			if(err){
+				console.info(err)
+			}else{
+				console.info("ok~")
+			}
+		})
+	④、同步写
+		var fs = require("fs")
+		fs.writeFileSync("./hello1.txt","welcome china")
+
+	在读文件的时候如果我们不传编码，默认返回的是Buffer，buffer和String之间可以互相转化
+	在写文件的时候如果我们传入字符串默认以utf-8进行编码，如果传入buffer则按字节进行编码写入
+	如果我们要获取一些文件的信息可以使用stat()
+		var fs = require("fs")
+		fs.stat("./hello.js",function(err,stats){
+   			 if(err){
+       				console.info(err)
+    			}else{
+        	        	console.info(stats.ctime)
+     			  	console.info(stats.isFile())
+    			}
+		})
+
